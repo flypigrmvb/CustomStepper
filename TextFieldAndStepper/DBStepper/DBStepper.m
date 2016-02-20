@@ -203,4 +203,16 @@
     return (result!=NULL);
 }
 
+#pragma mark - Override
+
+-(void)setFrame:(CGRect)frame{
+    [super setFrame:frame];
+    
+    _decreaseBtnF = CGRectMake(0, 0, 30, 30);
+    _increaseBtnF = CGRectMake(self.frame.size.width - 30, 0, 30, 30);
+    _textFieldF = CGRectMake(30, 0, self.frame.size.width - 30*2, 30);
+    
+    [self layoutIfNeeded];
+}
+
 @end

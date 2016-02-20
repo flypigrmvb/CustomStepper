@@ -26,12 +26,13 @@
     tf.contentHorizontalAlignment = UIControlContentHorizontalAlignmentCenter;
     [self.view addSubview:tf];
     
-    DBStepper* stepper = [[DBStepper alloc] initWithFrame:CGRectMake(100, 200, 100, 30)];
+    DBStepper* stepper = [[DBStepper alloc] initWithFrame:CGRectZero];
     stepper.minValue = 2;
     stepper.maxValue = 99;
     stepper.step = 5;
     stepper.curValue = 23;
     [self.view addSubview:stepper];
+    stepper.frame = CGRectMake(100, 200, 160, 30);
     
     stepper.stepperValueDidChangedBlock = ^(int value) {
         NSLog(@"==stepperValueDidChangedBlock== %d", value);
